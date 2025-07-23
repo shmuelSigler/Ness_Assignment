@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Docker image 
         run: |
-          docker build -t docker.io/${{ secrets.DOCKERHUB_USER }}/hello-world:v${{ steps.version.outputs.version }}
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USER }}/hello-world:v${{ steps.version.outputs.version }} .
 
       - name: Push Docker image
         run: |
