@@ -38,6 +38,9 @@ jobs:
       - name: Test
         run: dotnet test tests/HelloWorld.Tests.csproj -c Release
 
+      - name: Test coverage
+        run: dotnet test tests/HelloWorld.Tests.csproj -c Release --collect:"XPlat Code Coverage"
+
       - name: Publish
         run: dotnet publish src/HelloWorld.csproj -c Release -o app --no-build
 
