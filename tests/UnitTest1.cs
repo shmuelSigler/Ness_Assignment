@@ -7,7 +7,7 @@ public class UnitTest1
     [Fact]
     public void Print_ReturnsHelloWorld()
     {
-        Assert.Equal("Hello Ness", Program.Print());
+        Assert.Equal("Hello World", Program.Print());
     }
 
     [Fact]
