@@ -21,7 +21,7 @@ jobs:
         with:
           tag_prefix: "v"
           major_pattern: "BREAKING CHANGE:"
-          minor_pattern: "feat:"
+          minor_pattern: "feature:"
           version_format: "${major}.${minor}.${patch}"
           bump_each_commit: true
 
@@ -78,6 +78,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Print git version
+      - name: Print git version tag
         run: |
-          echo "Git version is: ${{ needs.build.outputs.version }}"   
+          echo "Git version tag is: ${{ needs.build.outputs.version }}"   
