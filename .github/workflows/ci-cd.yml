@@ -79,4 +79,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print git version
-        run: echo "Git version is: ${{ needs.build.outputs.version }}"   
+        run: |
+          echo "Git version is: ${{ needs.build.outputs.version }}"   
