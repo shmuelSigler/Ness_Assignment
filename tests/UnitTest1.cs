@@ -7,7 +7,7 @@ public class UnitTest1
     [Fact]
     public void Print_ReturnsHelloWorld()
     {
-        Assert.Equal("Hello World", Program.Print());
+        Assert.Equal("Hello Ness", Program.Print());
     }
 
     [Fact]
@@ -17,6 +17,6 @@ public class UnitTest1
         Console.SetOut(output);
         Program.Main(Array.Empty<string>());
         var consoleOutput = output.ToString().Trim();
-        Assert.Equal("Hello World", consoleOutput);
+        Assert.Equal("Hello Ness", consoleOutput);
     }
 }

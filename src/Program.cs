@@ -9,7 +9,7 @@ public class Program
 
     public static string Print()
     {
-        return "Hello World";
+        return "Hello Ness";
     }
 }
 
