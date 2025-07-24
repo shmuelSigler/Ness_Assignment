@@ -22,7 +22,7 @@ jobs:
           minor_pattern: "feat:"
           patch_pattern: "fix:"
           version_format: "${major}.${minor}.${patch}"
-          bump_each_commit: false
+          bump_each_commit: true
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
