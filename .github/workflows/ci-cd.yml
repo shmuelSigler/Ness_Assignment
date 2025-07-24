@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.tag.outputs.version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -71,4 +73,10 @@ jobs:
             echo "console output doesn't conatins 'Hello World', but $console_output"
             exit 1
           fi
-
+    
+    propagate metadata:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print git version
+          run: echo "Git version is: ${{ needs.build.outputs.version }}"   

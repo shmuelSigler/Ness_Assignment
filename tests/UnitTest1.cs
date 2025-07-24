@@ -17,6 +17,6 @@ public class UnitTest1
         Console.SetOut(output);
         Program.Main(Array.Empty<string>());
         var consoleOutput = output.ToString().Trim();
-        Assert.Equal("Hello Ness", consoleOutput);
+        Assert.Equal("Hello World", consoleOutput);
     }
 }
