@@ -63,4 +63,13 @@ jobs:
         run: |
           docker push docker.io/${{ secrets.DOCKERHUB_USER }}/hello-world:v${{ steps.tag.outputs.version }}
 
+      - name: Launch Container And Assert
+        run: |
+          console_output=$(docker run docker.io/${{ secrets.DOCKERHUB_USER }}/hello-world:v${{ steps.tag.outputs.version }})
+          if echo "$console_output" | grep -q "Hello World"; then
+            echo "Output contains 'Hello World'"
+          else
+            echo "console output doesn't conatins 'Hello World', but $console_output"
+            exit 1
+          fi
 
