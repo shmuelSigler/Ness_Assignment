@@ -74,9 +74,9 @@ jobs:
             exit 1
           fi
     
-    propagate metadata:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - name: Print git version
-          run: echo "Git version is: ${{ needs.build.outputs.version }}"   
+  propagate_metadata:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print git version
+        run: echo "Git version is: ${{ needs.build.outputs.version }}"   
